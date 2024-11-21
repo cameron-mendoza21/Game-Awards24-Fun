@@ -47,26 +47,6 @@
             height: 100%;
         }
 
-         /* Styling for the bingo game */
-        #bingo-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-        }
-        .bingo-cell {
-            border: 2px solid #343a40;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-        .bingo-cell:hover {
-            transform: scale(1.05);
-            background-color: #f8f9fa;
-        }
-        .bingo-cell.marked {
-            background-color: #343a40;
-            color: white;
-        }
 
     </style>
 </head>
@@ -134,41 +114,13 @@
                 <div class="embed-container">
                     <!-- Replace the URL below with your published Google Sheet link -->
                     <iframe 
-                        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRwr2LVo67SOV8x25hIDjwn00_JMYlxMppDfyCKhOwduw0VslwC_KFogD8xHh78FqqeE237hmCP9zmu/pubhtml?widget=true&amp;headers=false">
+                        src="https://docs.google.com/spreadsheets/d/1eTKMzj0WvmAN75LUAbGvvy4kA0lFQ_25AAdocWP4DrE/htmlembed/sheet?gid=0?widget=true&amp&headers=false">
                         width="100%"
                         height="600" 
                         frameborder="0">
                     </iframe>
                 </div>
             </div>
-
-            <!-- Bingo Game Section -->
-<div class="container mt-5">
-    <h2>Bingo Game</h2>
-    <div id="bingo-grid" class="row row-cols-3 g-2">
-        <% randomizedItems.forEach((item, index) => { %>
-            <div class="col">
-                <div class="card p-3 text-center bingo-cell" id="cell-<%= index %>" onclick="markCell(<%= index %>)">
-                    <%= item %>
-                </div>
-            </div>
-        <% }); %>
-    </div>
-    <button class="btn btn-primary mt-3" onclick="resetBingo()">Reset Game</button>
-</div>
-
-<script>
-    // JavaScript to manage the bingo game
-    function markCell(index) {
-        const cell = document.getElementById(`cell-${index}`);
-        cell.classList.toggle('marked');
-    }
-
-    function resetBingo() {
-        const cells = document.querySelectorAll('.bingo-cell');
-        cells.forEach(cell => cell.classList.remove('marked'));
-    }
-</script>
 
         <!-- Welcome Message -->
         <h1>Welcome to MyApp</h1>

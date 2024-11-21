@@ -145,7 +145,7 @@
             <!-- Bingo Game Section -->
 <div class="container mt-5">
     <h2>Bingo Game</h2>
-    <div id="bingo-grid" class="row row-cols-3 g-2">
+    <div id="bingo-grid" class="row row-cols-3 g-5">
         <% randomizedItems.forEach((item, index) => { %>
             <div class="col">
                 <div class="card p-3 text-center bingo-cell" id="cell-<%= index %>" onclick="markCell(<%= index %>)">

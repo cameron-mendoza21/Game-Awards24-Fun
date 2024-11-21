@@ -8,7 +8,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const app = express();
 const port = process.env.PORT || 3000;
 
-const bingoItems = [
+const bingoitems = [
     'Item 1', 'Item 2', 'Item 3' , 'Item 4', 'Item 5', 
     'Item 6', 'Item 7', 'Item 8' , 'Item 9', 'Item 10', 
     'Item 11', 'Item 12', 'Item 13' , 'Item 14', 'Item 15', 
@@ -19,7 +19,7 @@ const bingoItems = [
 // Function to get a random selection of items
 function getRandomBingoItems() {
     const shuffled = bingoItems.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 25); // Return 16 items for a 4x4 grid
+    return shuffled.slice(0, 16); // Return 16 items for a 4x4 grid
 }
 
 app.set('view engine','ejs');
@@ -77,7 +77,7 @@ app.get('/logout', (req, res) => {
 // Serve your HTML file or render views
 app.get('/', (req, res) => {
     const randomizedItems = getRandomBingoItems();
-    res.render('index', { user: req.user, randomizedItems: randomizedItems, bingoItems: bingoItems});
+    res.render('index', { user: req.user});
 });
 
 

@@ -48,25 +48,25 @@
         }
 
          /* Styling for the bingo game */
-        #bingo-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-        }
-        .bingo-cell {
-            border: 2px solid #343a40;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-        .bingo-cell:hover {
-            transform: scale(1.05);
-            background-color: #f8f9fa;
-        }
-        .bingo-cell.marked {
-            background-color: #343a40;
-            color: white;
-        }
+    #bingo-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    .bingo-cell {
+        border: 2px solid #343a40;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    .bingo-cell:hover {
+        transform: scale(1.05);
+        background-color: #f8f9fa;
+    }
+    .bingo-cell.marked {
+        background-color: #343a40;
+        color: white;
+    }
 
     </style>
 </head>
@@ -145,7 +145,7 @@
             <!-- Bingo Game Section -->
 <div class="container mt-5">
     <h2>Bingo Game</h2>
-    <div id="bingo-grid" class="row row-cols-3 g-2">
+    <div id="bingo-grid" class="row row-cols-4 g-2">
         <% randomizedItems.forEach((item, index) => { %>
             <div class="col">
                 <div class="card p-3 text-center bingo-cell" id="cell-<%= index %>" onclick="markCell(<%= index %>)">

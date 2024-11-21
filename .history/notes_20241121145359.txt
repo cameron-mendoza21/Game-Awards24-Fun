@@ -13,6 +13,6 @@ google sheet api for showcasing spreadsheet | complete
 style will be simple modern, darker colors since its late at night and we use dark mode
 
 
-bingo Game with randomized items selected from a list | basic setup is completed
+bingo Game with randomized items selected from a list
 wordle game
 drinking game

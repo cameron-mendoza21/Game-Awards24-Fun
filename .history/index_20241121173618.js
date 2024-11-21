@@ -19,7 +19,7 @@ const bingoItems = [
 // Function to get a random selection of items
 function getRandomBingoItems() {
     const shuffled = bingoItems.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 25); // Return 16 items for a 4x4 grid
+    return shuffled.slice(0, 16); // Return 16 items for a 4x4 grid
 }
 
 app.set('view engine','ejs');
