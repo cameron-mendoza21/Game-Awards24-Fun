@@ -6,14 +6,14 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const app = express();
-//const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.set('view engine','ejs');
 app.set('views', './views');
 
 //Middleware
 app.use(session({
-    //secret: process.env.SESSION_SECRET || 'default',
+    secret: process.env.SESSION_SECRET || 'default',
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -32,9 +32,9 @@ passport.deserializeUser((user, done)=> done(null,user));
 
 // Configure Google OAuth strategy
 passport.use(new GoogleStrategy({
-    //clientID: process.env.GOOGLE_CLIENT_ID, // Replace with your Client ID
-    //clientSecret: process.env.GOOGLE_CLIENT_SECRET, // Replace with your Client Secret
-    //callbackURL: process.env.GOOGLE_CALLBACK_URL, // Callback URL
+    clientID: process.env.GOOGLE_CLIENT_ID, // Replace with your Client ID
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET, // Replace with your Client Secret
+    callbackURL: process.env.GOOGLE_CALLBACK_URL, // Callback URL
 }, (accessToken, refreshToken, profile, done) => {
     // You can save user info in a database here
     return done(null, profile);
