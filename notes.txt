@@ -1,0 +1,18 @@
+single page, top portion is shows off the spreadsheet and who is in the lead
+spread sheet will show off game cover arts and show off who is in 1st. 2nd. 3rd
+
+order of page
+
+google sign in to hold account info on nav bar
+
+livestream of game awards | right next to stream| Live updates from game award twitter
+
+spreadsheet will dictate what populates on the webapp.
+google sheet api for showcasing spreadsheet
+
+style will be simple modern, darker colors since its late at night and we use dark mode
+
+
+bingo Game with randomized items selected from a list
+wordle game
+drinking game
